@@ -51,6 +51,7 @@ void DatabaseTableModel::fetch_rows(){
 
 void DatabaseTableModel::render_rows(){
     for(int i = 0; i < fields.size(); i++){
+        qDebug() << fields.size() << endl;
            this->appendRow(fields[i]);
     }
 }
@@ -107,6 +108,17 @@ void DatabaseTableModel::save_row(QList<QStandardItem*> row){
     query.exec(string_query);
 
     //query.exec(string_query);
+}
+
+void DatabaseTableModel::insertEmptyRow(){
+    QList<QStandardItem*> row;
+    for(int i = 0; i < columnCount(); i++){
+        QStandardItem *item = new QStandardItem;
+        item->setText("null");
+        row.append(item);
+    }
+    fields.push_back(row);
+    appendRow(row);
 }
 
 

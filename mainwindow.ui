@@ -50,6 +50,13 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="newrowButton">
+        <property name="text">
+         <string>New row</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
    </layout>

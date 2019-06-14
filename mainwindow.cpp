@@ -62,3 +62,9 @@ void MainWindow::showNotification(QString message){
     message_box->setText(message);
     message_box->show();
 }
+
+void MainWindow::on_newrowButton_clicked()
+{
+    DatabaseTableModel* model = static_cast<DatabaseTableModel*>(ui->tableView->model());
+    model->insertEmptyRow();
+}

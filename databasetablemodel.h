@@ -10,6 +10,7 @@ class DatabaseTableModel : public QStandardItemModel
 public:
     DatabaseTableModel(QSqlDatabase database,QString schema,QString table, QObject* = nullptr);
     void save_table();
+    void insertEmptyRow();
 private:
     QSqlDatabase db;
     QString table;
